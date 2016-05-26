@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="home">
+            <result>/home.jsp</result>
+        </action>
+    </package>
+    <package name="catalogo" namespace="/catalogo" extends="struts-default">
+        <action name="saveOrUpdateAreaOcupacion" class="com.serviciosdecapacitacion.action.AreaOcupacionAction" method="saveOrUpdate">
+            <result name="success" type="redirect">listAreaOcupacion</result>
+        </action>
+        <action name="listAreaOcupacion" class="com.serviciosdecapacitacion.action.AreaOcupacionAction" method="list">
+            <result>/area_ocupacion.jsp</result>
+        </action>
+        <action name="editAreaOcupacion" class="com.serviciosdecapacitacion.action.AreaOcupacionAction" method="edit">
+            <result name="success">/area_ocupacion.jsp</result>
+        </action>
+        <action name="deleteAreaOcupacion" class="com.serviciosdecapacitacion.action.AreaOcupacionAction" method="delete">
+            <result name="success" type="redirect">listAreaOcupacion</result>
+        </action>
+        <action name="saveOrUpdateAreaTematica" class="com.serviciosdecapacitacion.action.AreaTematicaAction" method="saveOrUpdate">
+            <result name="success" type="redirect">listAreaTematica</result>
+        </action>
+        <action name="listAreaTematica" class="com.serviciosdecapacitacion.action.AreaTematicaAction" method="list">
+            <result>/area_tematica.jsp</result>
+        </action>
+        <action name="editAreaTematica" class="com.serviciosdecapacitacion.action.AreaTematicaAction" method="edit">
+            <result name="success">/area_tematica.jsp</result>
+        </action>
+        <action name="deleteAreaTematica" class="com.serviciosdecapacitacion.action.AreaTematicaAction" method="delete">
+            <result name="success" type="redirect">listAreaTematica</result>
+        </action>
+        <action name="saveOrUpdateProgramaCapacitacion" class="com.serviciosdecapacitacion.action.ProgramaCapacitacionAction" method="saveOrUpdate">
+            <result name="success" type="redirect">listProgramaCapacitacion</result>
+        </action>
+        <action name="listProgramaCapacitacion" class="com.serviciosdecapacitacion.action.ProgramaCapacitacionAction" method="list">
+            <result>/programa_capacitacion.jsp</result>
+        </action>
+        <action name="editProgramaCapacitacion" class="com.serviciosdecapacitacion.action.ProgramaCapacitacionAction" method="edit">
+            <result name="success">/programa_capacitacion.jsp</result>
+        </action>
+        <action name="deleteProgramaCapacitacion" class="com.serviciosdecapacitacion.action.ProgramaCapacitacionAction" method="delete">
+            <result name="success" type="redirect">listProgramaCapacitacion</result>
+        </action>
+    </package>
+</struts>
